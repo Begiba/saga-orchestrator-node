@@ -1,0 +1,86 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8fafc"/>
+  
+  <!-- Service boxes -->
+  <rect x="50" y="50" width="150" height="80" rx="8" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+  <text x="125" y="85" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Order Service</text>
+  
+  <rect x="50" y="200" width="150" height="80" rx="8" fill="#10b981" stroke="#047857" stroke-width="2"/>
+  <text x="125" y="235" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Inventory Service</text>
+  
+  <rect x="50" y="350" width="150" height="80" rx="8" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+  <text x="125" y="385" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Payment Service</text>
+  
+  <rect x="50" y="500" width="150" height="80" rx="8" fill="#10b981" stroke="#047857" stroke-width="2"/>
+  <text x="125" y="535" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Inventory Service</text>
+  
+  <!-- Action boxes -->
+  <rect x="350" y="200" width="120" height="80" rx="6" fill="#e0f2fe" stroke="#0369a1" stroke-width="1"/>
+  <text x="410" y="245" text-anchor="middle" fill="#0369a1" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Reserve Stock</text>
+  
+  <rect x="350" y="350" width="120" height="80" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="410" y="395" text-anchor="middle" fill="#d97706" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Charge Payment</text>
+  
+  <rect x="350" y="500" width="120" height="80" rx="6" fill="#dcfce7" stroke="#047857" stroke-width="1"/>
+  <text x="410" y="540" text-anchor="middle" fill="#047857" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Release Stock</text>
+  <text x="410" y="555" text-anchor="middle" fill="#047857" font-family="Arial, sans-serif" font-size="10">(Compensation)</text>
+  
+  <!-- Result boxes -->
+  <rect x="550" y="210" width="60" height="40" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="580" y="235" text-anchor="middle" fill="#16a34a" font-family="Arial, sans-serif" font-size="12" font-weight="bold">OK</text>
+  
+  <rect x="550" y="360" width="60" height="40" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="580" y="385" text-anchor="middle" fill="#dc2626" font-family="Arial, sans-serif" font-size="12" font-weight="bold">FAIL</text>
+  
+  <!-- Arrows -->
+  <!-- Order to Inventory -->
+  <path d="M 125 130 L 125 200" stroke="#4b5563" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Inventory to Reserve Stock -->
+  <path d="M 200 240 L 350 240" stroke="#4b5563" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Reserve Stock to OK -->
+  <path d="M 470 230 L 550 230" stroke="#4b5563" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Inventory to Payment -->
+  <path d="M 125 280 L 125 350" stroke="#4b5563" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Payment to Charge Payment -->
+  <path d="M 200 390 L 350 390" stroke="#4b5563" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Charge Payment to FAIL -->
+  <path d="M 470 380 L 550 380" stroke="#4b5563" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Payment to Inventory (compensation) -->
+  <path d="M 125 430 L 125 500" stroke="#4b5563" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Inventory to Release Stock -->
+  <path d="M 200 540 L 350 540" stroke="#4b5563" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Curved compensation arrow -->
+  <path d="M 580 390 Q 650 450 200 540" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrowhead-red)" stroke-dasharray="5,5"/>
+  
+  <!-- Labels for flow direction -->
+  <text x="150" y="155" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">1</text>
+  <text x="275" y="235" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">2</text>
+  <text x="150" y="305" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">3</text>
+  <text x="275" y="385" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">4</text>
+  <text x="150" y="455" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">5</text>
+  <text x="275" y="535" fill="#6b7280" font-family="Arial, sans-serif" font-size="12">6</text>
+  
+  <!-- Compensation label -->
+  <text x="600" y="440" fill="#dc2626" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Compensation</text>
+  <text x="600" y="455" fill="#dc2626" font-family="Arial, sans-serif" font-size="11">Flow</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4b5563"/>
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+</svg>
