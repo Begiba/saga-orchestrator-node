@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: saga
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  order:
+    build: ./order-service
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://user:pass@postgres:5432/saga
+    depends_on:
+      - postgres
+      - inventory
+      - payment
+      - shipping
+
+  inventory:
+    build: ./inventory-service
+    ports:
+      - "3001:3001"
+
+  payment:
+    build: ./payment-service
+    ports:
+      - "3002:3002"
+
+  shipping:
+    build: ./shipping-service
+    ports:
+      - "3003:3003"
+
+volumes:
+  pgdata:
